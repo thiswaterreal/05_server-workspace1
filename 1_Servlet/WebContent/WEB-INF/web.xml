@@ -16,7 +16,7 @@
   	  				   http://구동중인서버의ip주소:포트번호/애플리케이션의루트명
   	  				   http://localhost:8888/1_Servlet (localhost==자신의ip주소 ==192.168.20.47)
   	  				   
-  	  				   단, 해당 welcome file은 WebContent/ 바로 아래에 위치해야만 잘 찾아서 보여짐!!(중요)
+  	  				   단, 해당 welcome file(index.html)은 WebContent/ 바로 아래에 위치해야만 잘 찾아서 보여짐!!(중요)
   	  				   	   1_Servlet/WebContent/index.html <= 이렇게 되도록!!
    -->
   
