@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>POST 방식으로 요청해보기</h1>
+	<p>
+		특징1. POST 방식으로 요청시 URL Body 영역에 데이터를 포함시켜서 넘김 <br>
+		=> 사용자가 입력한 값(데이터)들이 url에 노출되지 않음 <br>
+		=> 즉, 로그인이나 회원가입 같은 경우 POST 방식에 적합함 <br><br>
+		
+		특징2. Body 영역은 전송하는 길이에 제한이 없음 <br>
+		=> 즉, 게시판 작성 같은 경우 POST 방식이 적합함 <br>
+		
+		특징3. 즐겨찾기 가능하나 (단순 url 저장) 데이터가 url에 노출되어있진 않음
+		=> 단, 기존에 봤던 응답화면은 볼 수 없음 <br>
+		=> 즉, 검색 기능 같은 경우에는 POST 방식 부적합함
+		
+		특징4. Time out이 존재하기 때문에 페이지 요청, 기다리는 시간이 있음
+	</p>
+	
+	<form action="/1_Servlet/test2.do" method="POST">
+	<!-- "test1.do" == 상대경로방식 
+		  http://localhost:8888/1_Servlet/views/test1.do 이렇게 돼부림..
+		  
+		 "/test1.do" == 절대경로방식
+		  http://localhost:8888/test1.do 이렇게 돼부림..
+		  
+		 "/1_Servlet/test1.do" == *절대경로방식*
+		  http://localhost:8888/1_Servlet/test1.do
+	-->
+		<ul>
+			<li>
+				이름 : <input type="text" name="name">
+			</li>
+			<li>
+				성별 : 
+				<input type="radio" name="gender" value="M">남자
+				<input type="radio" name="gender" value="F">여자	<!--name값 일치 시켜줌 둘중 하나만 눌리도록 (중복제거)-->
+			</li>
+			<li>
+				나이 :
+				<input type="number" name="age">
+			</li>
+			<li>
+				거주지 :
+				<select name="city">
+					<option>서울</option>		<!--value값 따로 안주면 안에 내용값이 넘어감-->
+					<option>경기도</option>
+					<option>강원도</option>
+					<option>충청도</option>
+					<option>경상도</option>
+					<option selected>전라도</option>
+				</select>
+			</li>
+			<li>
+				키 :
+				<input type="range" name="height" min="140" max="200">
+			</li>
+			<li>
+				좋아하는 음식 (모두 고르시오) :
+				<input type="checkbox" name="food" value="한식">한식	<!--radio나 checkbox는 value값 줘야 넘어감(select option과 달라)-->
+				<input type="checkbox" name="food" value="중식">중식
+				<input type="checkbox" name="food" value="일식">일식
+				<input type="checkbox" name="food" value="양식">양식
+				<input type="checkbox" name="food" value="분식">분식
+			</li>
+			<li>
+				<input type="submit">
+				<input type="reset">
+			</li>
+		</ul>
+	</form>
+
+</body>
+</html>

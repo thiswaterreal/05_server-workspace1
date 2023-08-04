@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class RequestGetServlet
  */
 @WebServlet("/test1.do")	/* 여기를 확인!! 잘 연결됐는지 확인!! */
-							/* get 방식이면 doGet으로 */
+							/* get 방식이면 => doGet으로 */
 public class RequestGetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,6 +49,7 @@ public class RequestGetServlet extends HttpServlet {
 		 * 
 		 * */
 		
+		// 1) 단수
 		String name = request.getParameter("name");							// "차은우" | ""
 		String gender = request.getParameter("gender");						// "M" | "F" | null
 		int age = Integer.parseInt(request.getParameter("age"));			// "20" => 20 | "" => NumberFormatException 예외 발생! : 빈문자열, 숫자가 아닌걸 형변환? 불가!!
@@ -60,15 +61,15 @@ public class RequestGetServlet extends HttpServlet {
 		
 		
 		// 이렇게 웹에서 입력받은 값(사용자가 요청한 값)가져올 수 있음
+		// 1) 단수
 		System.out.println("name : " + name);
 		System.out.println("gender : " + gender);
 		System.out.println("age : " + age);
 		System.out.println("city : " + city);
 		System.out.println("height : " + height);
-		// 2)
+		// 2) 복수
 		// System.out.println("foods : " + foods);		// 땡! 주소값 나옴..[Ljava.lang.String;@433e14e4
 		// System.out.println("foods : " + foods[0]);	// 땡! 이건 오류날 수도 있음 null이면 / 첫번째 선택한 체크박스 값. 일식 
-		
 		if(foods == null) {
 			System.out.println("foods : 없음");
 		}else {
