@@ -84,6 +84,8 @@ public class RequestGetServlet extends HttpServlet {
 			System.out.println("foods : " + String.join("/", foods)); // foods에 있는 값들을 '/' 기준으로 출력
 		}
 		
+		
+		//-----------------------------------------------------------------------------------
 		// 뽑아낸 값들을 가지고 요청처리 해야됨 (db와 상호작용 : 조회, 삽입, 수정, 삭제..)
 		// > Service 메소드 호출 > Dao 메소드 호출 > DB에 sql문 실행
 
@@ -96,13 +98,14 @@ public class RequestGetServlet extends HttpServlet {
 		}
 		*/
 		// 위의 요청 처리 후 성공했다는 가정하에 사용자가 보게 될 응답페이지(html) 만들어서 전송
-		// 즉, 여기 'Java 코드 내에' 사용자가 보게 될 응답 html 구문 작성할거!!
+		// 즉, 여기 'Java 코드 내에' 사용자가 보게 될 '응답 html 구문' 작성할거!!
 		
 		// 장점 : Java 코드 내에 작성하기 때문에 반복문, 조건문, 유용한 메소드 같은 걸 활용할 수 있음
 		// 단점 : 불편함, 복잡함, 혹시라도 나중에 html 수정한다면 Java 코드를 수정하는거라서
 		//		 다시 반영하고자 한다면 서버를 재실행 해야됨
 		
-		// * response 객체를 통해 사용자에게 html(응답화면) 전달
+		
+		// * response 객체를 통해 사용자에게 'html(응답화면)' 전달
 		
 		// 1) 이제부터 내가 출력할 내용은 문서형태가 html이고 문자인코딩 문자셋 utf-8이라는 걸 선언
 		response.setContentType("text/html; charset=UTF-8");
@@ -110,7 +113,7 @@ public class RequestGetServlet extends HttpServlet {
 		// 2) 응답하고자 하는 사용자 (요청했던 사용자)와의 스트림(클라이언트와의 통로) 생성
 		PrintWriter out = response.getWriter();
 		
-		// 3) 저 스트림을 통해 응답 html 구문을 한줄씩 출력
+		// 3) 저 스트림(out)을 통해 응답 html 구문을 한줄씩 출력
 		out.println("<html>");
 		
 		out.println("<head>");
@@ -138,7 +141,7 @@ public class RequestGetServlet extends HttpServlet {
 		if(gender == null) {
 			out.println(" 선택을 안했습니다. <br>");
 		}else {
-			if(gender.equals("M")) {
+			if(gender.equals("M")) {	// String String 비교니까 .equels()
 				out.println("<span id='gender'>남자</span>입니다.");
 			}else {
 				out.println("<span id='gender'>여자</span>입니다.");			
