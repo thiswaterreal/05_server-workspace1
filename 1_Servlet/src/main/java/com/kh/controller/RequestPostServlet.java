@@ -60,13 +60,13 @@ public class RequestPostServlet extends HttpServlet {
 		// url body 영역 방식의 인코딩이 UTF-8이 아님.. 그래서 깨지게 나옴.. 따라서 뽑기 전!!에 인코딩 설정해줘야함
 		
 		
-		
+		//---------------------------------------------------------------------------------
 		// 요쳥처리(db의 sql문 실행) : > Service > Dao > sql 문 실행
 		
 		// 요청 처리 다 했다는 가정하에 사용자가 보게 될 응답 html
 		
-		// 1. 순수 Servlet 방식으로 작성하는 방법 : Java 코드 내에 html을 기술
-		// 2. JSP(Java Sever Page)방식 : html 내에 Java 코드를 쓸 수 있음
+		// 1. 순수 Servlet 방식으로 작성하는 방법	: Java 코드 내에 html을 기술
+		// 2. JSP(Java Sever Page)방식		: html 내에 Java 코드를 쓸 수 있음
 		
 		// 응답페이지를 만드는 과정을 JSP에게 위임! (떠넘기기)
 		
@@ -79,8 +79,8 @@ public class RequestPostServlet extends HttpServlet {
 		request.setAttribute("height", height);
 		request.setAttribute("gender", gender);
 		request.setAttribute("foods", foods);
-		// 파랑 == 내맘대로 지음
-		// 갈색 == 사용자가 입력한 값들 담은 변수
+		// 파랑 == (키)내맘대로 지음
+		// 갈색 == (벨류)사용자가 입력한 값들 담은 변수
 		
 		// 응답하고자 하는 뷰(jsp) 선택하면서 RequestDispatcher 객체 생성 <= 규칙
 		RequestDispatcher view = request.getRequestDispatcher("views/responsePage.jsp");

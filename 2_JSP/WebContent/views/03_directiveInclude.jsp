@@ -13,6 +13,7 @@
 	<div style="border:1px solid black">
 		<%@ include file = "01_ScriptingElement.jsp"%>
 	</div>
+	<!-- include 하면 01_파일에서 수정한 내용도 바로바로 반영됨 -->
 	
 	* 포함(include)한 jsp상에 선언되어 있는 변수를 가져다가 사용 가능
 	1부터 100까지의 총합계 : <%= sum %>

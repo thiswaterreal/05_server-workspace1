@@ -105,7 +105,7 @@ public class RequestGetServlet extends HttpServlet {
 		//		 다시 반영하고자 한다면 서버를 재실행 해야됨
 		
 		
-		// * response 객체를 통해 사용자에게 'html(응답화면)' 전달
+		// * response 객체를 통해 사용자에게 'html(응답화면)' 전달 (== 우리가 사용자에게 보여줄 결과?화면)
 		
 		// 1) 이제부터 내가 출력할 내용은 문서형태가 html이고 문자인코딩 문자셋 utf-8이라는 걸 선언
 		response.setContentType("text/html; charset=UTF-8");

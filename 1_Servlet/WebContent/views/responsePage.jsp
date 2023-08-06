@@ -25,19 +25,16 @@
 		// 반환형이 Object. 최상위(모든것의 부모)라서 다 담담,뺌뺌 가능
 		
 		String name = (String)request.getAttribute("name");
-		// getAttribute 반환형이 Object라서 String 자료형으로 담고싶다면 (다운캐스팅==강제형변환) 해줘야함
+		// '작은박스 = 큰박스'  이렇게 담는다는게 말이 안됨..
+		// 즉, getAttribute 반환형이 Object라서 String 자료형으로 담고싶다면 (다운캐스팅==강제형변환) 해줘야함
 		int age = (int)request.getAttribute("age");
 		String city = (String)request.getAttribute("city");
 		double height = (double)request.getAttribute("height");
 		String gender = (String)request.getAttribute("gender");
 		String[] foods = (String[])request.getAttribute("foods");
-		// 변수 셋팅 끝.
+		// attribute에 있는거 뽑아와서 변수에 셋팅 끝.
 	%>
-	
-	<!-- 
-	<%  %> : 변수선언 느낌
-	<%= %> : 출력하는 느낌
-	 -->
+
 	
 	<h2>개인정보 응답화면 - POST</h2>
 	
@@ -45,6 +42,7 @@
 	<span id="age"><%= age %></span>살이며,
 	<span id="city"><%= city %></span>에 사는,
 	키는 <span id="height"><%= height %></span>cm 이고,
+	
 	성별은
 	<% if(gender == null) { %>
 		선택하지 않았습니다. <br> <!-- case1 -->
@@ -79,7 +77,6 @@
 			}
 		</ul>
 		 -->
-		
 		
 	<% } %>
 	

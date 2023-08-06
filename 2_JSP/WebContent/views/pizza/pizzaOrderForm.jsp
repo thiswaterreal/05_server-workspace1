@@ -21,7 +21,7 @@
 	
 	<br><br>
 	
-	<form action="/2_JSP/confirmPizza.do" method="get">	<!-- action의 값 : confirmPizza.do -->
+	<form action="/2_JSP/confirmPizza.do" method="get">		<!-- action의 값 : confirmPizza.do -->
 
         <fieldset>
            <legend>주문자정보</legend>

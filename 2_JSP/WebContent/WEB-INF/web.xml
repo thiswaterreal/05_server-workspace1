@@ -8,12 +8,14 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
-  <!-- error 관련 처리 / 개발 할 때는 가장 나중에 추가하기 -->
+  <!-- error 관련 처리 / 개발할 때는 가장 나중에 추가하기(개발할 때는 자세한 에러창을 읽고 수정해야하기 때문에.. 다 만들고 나중에 사용자를 위해 추가 해주는 것 ) -->
+  <!-- 404 : page not found -->
   <error-page>
   	<error-code>404</error-code>
   	<location>/views/error404.jsp</location>
   </error-page>
   
+  <!-- 500 : 소스상의 문제 -->
   <error-page>
   	<error-code>500</error-code>
   	<location>/views/error500.jsp</location>

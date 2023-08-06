@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PizzaGet
+ * Servlet implementation class PizzaGetServlet
  */
 @WebServlet("/confirmPizza.do")
-public class PizzaGet extends HttpServlet {
+public class PizzaGetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PizzaGet() {
+    public PizzaGetServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,6 +26,7 @@ public class PizzaGet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String userName = request.getParameter("userName");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
@@ -34,7 +35,6 @@ public class PizzaGet extends HttpServlet {
 		String[] topping = request.getParameterValues("topping");
 		String[] side = request.getParameterValues("side");
 		String payment = request.getParameter("payment");
-		
 		
 		System.out.println("userName : " + userName);
 		System.out.println("phone : " + phone);
